@@ -15,7 +15,7 @@ interface Car {
   description: string;
   underMaintenance: boolean;
   image: string;
-};
+}
 
 function App() {
   const [cars, setCars] = useState<Car[]>([]);
@@ -43,7 +43,7 @@ function App() {
       };
       let hasError = false;
       const response = await fetch(`http://localhost:5000/${updatedCar._id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         body: JSON.stringify(updatedCar),
         headers: {
           'Content-Type': 'application/json'
